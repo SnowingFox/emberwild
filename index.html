@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08110f" />
+    <title>Emberwild</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="game-canvas" aria-label="Emberwild voxel world"></canvas>
+
+      <section id="start-screen" class="screen visible" aria-label="Start Emberwild">
+        <div class="title-lockup">
+          <div class="eyebrow">A living voxel wilderness</div>
+          <h1>Ember<span>wild</span></h1>
+          <p class="lede">Carve a path through sun-warmed forests, tidal pools, and layered stone.</p>
+        </div>
+        <div class="start-card">
+          <div class="card-topline"><span class="signal-dot"></span><span>WORLD SEED  ·  74219</span></div>
+          <button id="start-button" class="primary-button">Enter the wild <span>↗</span></button>
+          <div class="control-grid">
+            <div><strong>WASD</strong><span>Move</span></div>
+            <div><strong>SPACE</strong><span>Jump</span></div>
+            <div><strong>SHIFT</strong><span>Sprint</span></div>
+            <div><strong>CLICK</strong><span>Mine / place</span></div>
+          </div>
+          <p class="small-copy">Click to capture the mouse · ESC to pause · 1–6 selects a block</p>
+        </div>
+      </section>
+
+      <section id="pause-screen" class="screen" aria-label="Paused">
+        <div class="pause-mark">II</div>
+        <div class="eyebrow">The canopy is waiting</div>
+        <h2>Paused</h2>
+        <p class="lede">Return to the light when you are ready.</p>
+        <div class="pause-actions">
+          <button id="resume-button" class="primary-button">Resume <span>↗</span></button>
+          <button id="reset-button" class="quiet-button">Reset this world</button>
+        </div>
+      </section>
+
+      <section id="hud" class="hud" aria-live="polite" hidden>
+        <div class="hud-top">
+          <div class="brand-chip"><span class="brand-glyph">✦</span><span>EMBERWILD</span></div>
+          <div id="time-readout" class="time-readout">DAY 01  ·  06:42</div>
+          <div id="fps-readout" class="fps-readout">60 FPS</div>
+        </div>
+        <div class="crosshair" aria-hidden="true"><span></span><span></span></div>
+        <div id="target-readout" class="target-readout">LOOK AROUND TO EXPLORE</div>
+        <div class="hud-bottom">
+          <div id="position-readout" class="position-readout">X 0  Y 32  Z 0</div>
+          <div id="hotbar" class="hotbar" aria-label="Block hotbar"></div>
+          <div class="hint-chip"><span class="mouse-icon">◒</span><span>ESC to pause</span></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
